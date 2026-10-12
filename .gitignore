@@ -1,0 +1,24 @@
+# Build Artifacts
+Debug/
+Release/
+build/
+*.bin
+*.hex
+*.elf
+*.map
+*.o
+*.d
+*.su
+
+# IDE / Eclipse local settings
+.settings/
+*.launch
+.metadata/
+
+# Unused Toolchains (IAR, Keil)
+ewarm/
+MDK-ARM/
+
+# OS specific files
+.DS_Store
+Thumbs.db
