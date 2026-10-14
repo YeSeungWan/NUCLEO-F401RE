@@ -20,8 +20,8 @@ STM32 NUCLEO-F401RE 보드와 FreeRTOS(CMSIS-RTOS V2)를 활용하여 정밀 주
 
 ### 1. 왜 FreeRTOS를 사용하는가? (Why FreeRTOS?)
 기존의 메인 루프(`while(1)`) 기반 제어는 통신이나 복잡한 계산이 끼어들 경우 루프 주기(Cycle)가 불규칙하게 늘어나는 **지터(Jitter)**가 발생합니다.
-* **주기 결정론(Determinism)**: `vTaskDelayUntil()`을 사용해 다른 작업의 지연과 무관하게 10ms(100Hz) 정밀 제어 주기를 칼같이 사수합니다.
-* **우선순위 기반 선점(Preemption)**: 제어 루프(`osPriorityHigh`)가 텔레메트리 출력 루프(`osPriorityNormal`)보다 항상 우선권을 가져 제어 안정성을 보장합니다.
+* **주기 결정론(Determinism)**: `vTaskDelayUntil()`을 사용해 다른 작업의 지연과 무관하게 10ms(100Hz) 정밀 제어 주기를 사수합니다.
+* **우선순위 기반 선점(Preemption)**: 제어 루프(`osPriorityHigh`)가 텔레메트리 출력 루프(`osPriorityNormal`)보다 우선권을 가져 제어 안정성을 보장합니다.
 
 ### 2. 폐루프(Closed-Loop) PID 제어란?
 출력 결과(현재 속도)를 센서로 측정해 목표값과의 오차(Error)를 구한 뒤, 실시간으로 출력을 보정하는 피드백 제어입니다.
@@ -35,8 +35,6 @@ $$u(t) = K_p \, e(t) + K_i \int e(t)\,dt + K_d \frac{de(t)}{dt}$$
 ---
 
 ## 🏗 시스템 아키텍처 및 데이터 흐름도 (Data Flow)
-
-GitHub 마크다운에서 바로 렌더링되는 Mermaid 플로우차트 구조입니다.
 
 ```mermaid
 flowchart TD
