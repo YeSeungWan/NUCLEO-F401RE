@@ -120,7 +120,7 @@ nucleo-rtos-pid/
 
 ## 🗺️ 단계별 구현 및 검증 로드맵 (Verification Roadmap)
 
-- [ ] **Step 1: RTOS Baseline & Scheduling (Smoke Test)**
+- [x] **Step 1: RTOS Baseline & Scheduling (Smoke Test)**
   - `ControlTask`(1s 정주기, LD2 LED 토글) 및 `CommTask`(2s 정주기, UART 생존 로그) 구동
   - `osDelayUntil` 기반 정밀 타임스탬프(`osKernelGetTickCount`) 출력을 통해 스케줄러 틱 정상 동작 및 드리프트(Drift)/지터(Jitter) 부재 검증
 - [ ] **Step 2: Thread-Safe IPC (Message Queue)**
